@@ -212,13 +212,13 @@ if batch_mode:
                 st.download_button("Download results CSV", csv, file_name="predictions.csv", mime="text/csv")
 else:
     # Force text area text to be black
-st.markdown("""
-    <style>
-    textarea {
-        color: black !important;
-    }
-    </style>
-""", unsafe_allow_html=True)
+    st.markdown("""
+        <style>
+        textarea {
+            color: black !important;
+        }
+        </style>
+    """, unsafe_allow_html=True)
 
     tweet = st.text_area("Enter tweet text (one tweet).", height=150)
     if st.button("Analyze"):
