@@ -1,0 +1,10 @@
+tensorflow
+streamlit
+pandas
+numpy
+joblib
+matplotlib
+seaborn
+pydeck
+scikit-learn
+python-dateutil
