@@ -36,6 +36,15 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+# Force text area text to be black
+st.markdown("""
+    <style>
+    textarea {
+        color: black !important;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 st.title("Climate Tweet Sentiment Predictor")
 #st.write("Paste a tweet or upload a CSV (column name 'tweet') to get sentiment and Nigeria-specific stakeholder recommendations.\nThis will predict the sentiment of the tweet and give recommendatons to relevant stakeholders.")
 # Change the color of the text to white using markdown
@@ -211,7 +220,7 @@ if batch_mode:
                 csv = df.to_csv(index=False).encode('utf-8')
                 st.download_button("Download results CSV", csv, file_name="predictions.csv", mime="text/csv")
 else:
-    tweet = st.text_area("Enter tweet text (one tweet).", height=150)
+        tweet = st.text_area("Enter tweet text (one tweet).", height=150)
     if st.button("Analyze"):
         if not tweet.strip():
             st.warning("Please enter a tweet.")
