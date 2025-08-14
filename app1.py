@@ -17,7 +17,7 @@ LABEL_MAP_PATH = "label_map.json"
 DEFAULT_LABELS = ["negative", "neutral", "positive"]  # adjust if your labels differ
 # ----------------------------------------------------
 
-st.set_page_config(page_title="Climate Tweet Sentiment Predictor", layout="wide")
+st.set_page_config(page_title="Climate Tweet Sentiment Predictor by Oladipupo and Igbalaye", layout="wide")
 
 # Inject CSS to improve header visibility in dark mode and light mode
 st.markdown("""
