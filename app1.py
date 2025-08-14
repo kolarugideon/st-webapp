@@ -211,13 +211,21 @@ if batch_mode:
                 csv = df.to_csv(index=False).encode('utf-8')
                 st.download_button("Download results CSV", csv, file_name="predictions.csv", mime="text/csv")
 else:
-    # Force text area text to be black
+    # Force text area text to be black (and readable in dark mode)
     st.markdown("""
-        <style>
-        textarea {
-            color: black !important;
-        }
-        </style>
+    <style>
+    /* Targets all Streamlit text areas */
+    [data-testid="stTextArea"] textarea, textarea {
+        color: #000 !important;
+        -webkit-text-fill-color: #000 !important; /* Safari */
+        caret-color: #000 !important;
+        background-color: #fff !important;        /* ensures contrast in dark mode */
+    }
+    /* Placeholder color */
+    [data-testid="stTextArea"] textarea::placeholder {
+        color: #555 !important;
+    }
+    </style>
     """, unsafe_allow_html=True)
 
     tweet = st.text_area("Enter tweet text (one tweet).", height=150)
