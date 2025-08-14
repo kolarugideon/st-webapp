@@ -22,7 +22,7 @@ st.set_page_config(page_title="Climate Tweet Sentiment Predictor", layout="wide"
 st.title("Climate Tweet Sentiment Predictor")
 #st.write("Paste a tweet or upload a CSV (column name 'tweet') to get sentiment and Nigeria-specific stakeholder recommendations.\nThis will predict the sentiment of the tweet and give recommendatons to relevant stakeholders.")
 # Change the color of the text to white using markdown
-st.markdown("<p style='color: white; -webkit-text-stroke: 1px black; '>Paste a tweet or upload a CSV (column name 'tweet') to get sentiment of the tweet and give recommendations to relevant stake holders</p>", unsafe_allow_html=True)
+st.markdown("<p style='color: white; -webkit-text-stroke: 0.3px black; '>Paste a tweet or upload a CSV (column name 'tweet') to get sentiment of the tweet and give recommendations to relevant stake holders</p>", unsafe_allow_html=True)
 
 
 # ----------------- Utilities -----------------
