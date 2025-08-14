@@ -25,22 +25,13 @@ st.markdown("""
     /* Automatically adapt text color for dark/light mode */
     @media (prefers-color-scheme: dark) {
         h1, h2, h3 {
-            color: #FFD700 !important; /* Gold for dark mode */
+            color: #333333 !important; /* Gold for dark mode */
         }
     }
     @media (prefers-color-scheme: light) {
         h1, h2, h3 {
             color: #333333 !important; /* Dark gray for light mode */
         }
-    }
-    </style>
-""", unsafe_allow_html=True)
-
-# Force text area text to be black
-st.markdown("""
-    <style>
-    textarea {
-        color: black !important;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -220,6 +211,15 @@ if batch_mode:
                 csv = df.to_csv(index=False).encode('utf-8')
                 st.download_button("Download results CSV", csv, file_name="predictions.csv", mime="text/csv")
 else:
+    # Force text area text to be black
+st.markdown("""
+    <style>
+    textarea {
+        color: black !important;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
     tweet = st.text_area("Enter tweet text (one tweet).", height=150)
     if st.button("Analyze"):
         if not tweet.strip():
