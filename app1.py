@@ -36,7 +36,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.title("Climate Tweet Sentiment Predictor")
+st.title("Climate Tweet Sentiment Predictor by Oladipupo and Igbalaye")
 #st.write("Paste a tweet or upload a CSV (column name 'tweet') to get sentiment and Nigeria-specific stakeholder recommendations.\nThis will predict the sentiment of the tweet and give recommendatons to relevant stakeholders.")
 # Change the color of the text to white using markdown
 st.markdown("<p style='color: black; '>Paste a tweet or upload a CSV (column name 'tweet') to get sentiment of the tweet and give recommendations to relevant stake holders.</p>", unsafe_allow_html=True)
