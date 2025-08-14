@@ -211,22 +211,17 @@ if batch_mode:
                 csv = df.to_csv(index=False).encode('utf-8')
                 st.download_button("Download results CSV", csv, file_name="predictions.csv", mime="text/csv")
 else:
-    label = "Enter tweet text (one tweet)."
-
-    st.markdown(f"""
+    # Change the label (caption) color for the text area
+    st.markdown("""
     <style>
-    textarea[aria-label='{label}'] {{
-        color: #000 !important;
-        -webkit-text-fill-color: #000 !important;
-        caret-color: #000 !important;
-        background-color: #fff !important;
-    }}
-    textarea[aria-label="{label}"]::placeholder {{
-        color: #555 !important;
-    }}
+    /* Targets labels for Streamlit text areas */
+    [data-testid="stTextArea"] label {
+        color: black !important;   /* Change to your preferred color */
+        font-weight: bold;         /* Optional: make it stand out */
+    }
     </style>
     """, unsafe_allow_html=True)
-    
+
     tweet = st.text_area(label, height=150)
 
     #tweet = st.text_area("Enter tweet text (one tweet).", height=150)
