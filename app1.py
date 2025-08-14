@@ -222,9 +222,7 @@ else:
     </style>
     """, unsafe_allow_html=True)
 
-    tweet = st.text_area(label, height=150)
-
-    #tweet = st.text_area("Enter tweet text (one tweet).", height=150)
+    tweet = st.text_area("Enter tweet text (one tweet).", height=150)
     if st.button("Analyze"):
         if not tweet.strip():
             st.warning("Please enter a tweet.")
