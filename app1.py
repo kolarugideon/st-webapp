@@ -19,6 +19,23 @@ DEFAULT_LABELS = ["negative", "neutral", "positive"]  # adjust if your labels di
 
 st.set_page_config(page_title="Climate Tweet Sentiment Predictor", layout="wide")
 
+# Inject CSS to improve header visibility in dark mode and light mode
+st.markdown("""
+    <style>
+    /* Automatically adapt text color for dark/light mode */
+    @media (prefers-color-scheme: dark) {
+        h1, h2, h3 {
+            color: #FFD700 !important; /* Gold for dark mode */
+        }
+    }
+    @media (prefers-color-scheme: light) {
+        h1, h2, h3 {
+            color: #333333 !important; /* Dark gray for light mode */
+        }
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 st.title("Climate Tweet Sentiment Predictor")
 #st.write("Paste a tweet or upload a CSV (column name 'tweet') to get sentiment and Nigeria-specific stakeholder recommendations.\nThis will predict the sentiment of the tweet and give recommendatons to relevant stakeholders.")
 # Change the color of the text to white using markdown
