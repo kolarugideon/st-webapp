@@ -39,7 +39,7 @@ st.markdown("""
 st.title("Climate Tweet Sentiment Predictor")
 #st.write("Paste a tweet or upload a CSV (column name 'tweet') to get sentiment and Nigeria-specific stakeholder recommendations.\nThis will predict the sentiment of the tweet and give recommendatons to relevant stakeholders.")
 # Change the color of the text to white using markdown
-st.markdown("<p style='color: black; '>Paste a tweet or upload a CSV (column name 'tweet') to get sentiment of the tweet and give recommendations to relevant stake holders</p>", unsafe_allow_html=True)
+st.markdown("<p style='color: black; '>Paste a tweet or upload a CSV (column name 'tweet') to get sentiment of the tweet and give recommendations to relevant stake holders.</p>", unsafe_allow_html=True)
 
 
 # ----------------- Utilities -----------------
@@ -211,23 +211,6 @@ if batch_mode:
                 csv = df.to_csv(index=False).encode('utf-8')
                 st.download_button("Download results CSV", csv, file_name="predictions.csv", mime="text/csv")
 else:
-    # Force text area text to be black (and readable in dark mode)
-    st.markdown("""
-    <style>
-    /* Targets all Streamlit text areas */
-    [data-testid="stTextArea"] textarea, textarea {
-        color: #000 !important;
-        -webkit-text-fill-color: #000 !important; /* Safari */
-        caret-color: #000 !important;
-        background-color: #fff !important;        /* ensures contrast in dark mode */
-    }
-    /* Placeholder color */
-    [data-testid="stTextArea"] textarea::placeholder {
-        color: #555 !important;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
     tweet = st.text_area("Enter tweet text (one tweet).", height=150)
     if st.button("Analyze"):
         if not tweet.strip():
