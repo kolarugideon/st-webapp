@@ -211,7 +211,25 @@ if batch_mode:
                 csv = df.to_csv(index=False).encode('utf-8')
                 st.download_button("Download results CSV", csv, file_name="predictions.csv", mime="text/csv")
 else:
-    tweet = st.text_area("Enter tweet text (one tweet).", height=150)
+    label = "Enter tweet text (one tweet)."
+
+    st.markdown(f"""
+    <style>
+    textarea[aria-label='{label}'] {{
+        color: #000 !important;
+        -webkit-text-fill-color: #000 !important;
+        caret-color: #000 !important;
+        background-color: #fff !important;
+    }}
+    textarea[aria-label="{label}"]::placeholder {{
+        color: #555 !important;
+    }}
+    </style>
+    """, unsafe_allow_html=True)
+    
+    tweet = st.text_area(label, height=150)
+
+    #tweet = st.text_area("Enter tweet text (one tweet).", height=150)
     if st.button("Analyze"):
         if not tweet.strip():
             st.warning("Please enter a tweet.")
